@@ -9,33 +9,68 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
-            $table->timestamps();
-        });
+   public function up()
+{
+    Schema::create('users', function (Blueprint $table) {
+        $table->id('id');
 
-        Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
-        });
+        $table->unsignedInteger('cloud_id')->nullable();
+        $table->string('name')->nullable();
+        $table->string('first_name')->nullable();
+        $table->string('last_name')->nullable();
+        $table->string('email')->unique();
+        $table->string('country_code', 10)->default('91');
+        $table->string('phone')->nullable();
+        $table->string('designation')->nullable();
+        $table->string('user_type')->nullable();
+        $table->string('role')->nullable();
 
-        Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->primary();
-            $table->foreignId('user_id')->nullable()->index();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->longText('payload');
-            $table->integer('last_activity')->index();
-        });
-    }
+        $table->unsignedInteger('dept_id')->nullable();
+        $table->unsignedInteger('role_id')->nullable();
+        $table->unsignedInteger('team_id')->nullable();
+        $table->unsignedInteger('branch_id')->nullable();
+        $table->unsignedInteger('region_id')->nullable();
+        $table->unsignedInteger('country_id')->nullable();
+
+        $table->string('mapped_id')->nullable();
+        $table->string('branch_name')->nullable();
+
+        $table->integer('email_otp')->nullable();
+        $table->string('link_expired')->default('');
+        $table->integer('mobile_otp')->nullable();
+
+        $table->enum('block_login', ['Yes', 'No']);
+        $table->enum('pwd_alert', ['Yes', 'No'])->default('No');
+        $table->enum('first_login', ['Yes', 'No'])->default('Yes');
+        $table->enum('tour_initiate', ['Yes', 'No'])->default('No');
+        $table->string('tour_step')->default('Not Started');
+        $table->enum('system_check', ['Yes', 'No'])->default('No');
+        $table->string('signup_stepper')->default('Step1');
+        $table->enum('sign_up_from', ['External', 'Internal'])->default('Internal');
+        $table->enum('update_notice', ['Yes', 'No'])->default('No');
+        $table->enum('show_payout', ['Yes', 'No'])->default('No');
+
+        $table->string('dob')->nullable();
+        $table->string('profile_image')->nullable();
+        $table->enum('email_verify', ['Yes', 'No'])->default('Yes');
+        $table->timestamp('email_verified_at')->nullable();
+
+        $table->string('password');
+        $table->enum('user_status', ['Active', 'Inactive'])->default('Active');
+        $table->enum('logged_in_status', ['Login', 'Logout'])->default('Logout');
+
+        $table->string('last_login_date')->nullable();
+        $table->string('last_login_time')->nullable();
+       $table->string('date', 191)->nullable();                  
+        $table->string('time', 191)->nullable();                  
+        $table->string('ip', 191)->nullable();
+        $table->string('browser', 191)->nullable();
+        $table->string('remember_token',100)->nullable(); 
+
+        $table->timestamps(); // created_at and updated_at
+    });
+}
+
 
     /**
      * Reverse the migrations.
@@ -43,7 +78,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+      
     }
 };
