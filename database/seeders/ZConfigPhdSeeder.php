@@ -1,6 +1,7 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\ZConfigPhd;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,7 @@ class ZConfigPhdSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('z_config_phd')->insert([
+        ZConfigPhd::insert([
             ['phd_id' => 1, 'cloud_id' => 0, 'phd_name' => 'Other Doctorate', 'phd_parent_id' => 0],
             ['phd_id' => 2, 'cloud_id' => 0, 'phd_name' => 'M.Phil.', 'phd_parent_id' => 0],
             ['phd_id' => 3, 'cloud_id' => 0, 'phd_name' => 'Ph.D', 'phd_parent_id' => 0],

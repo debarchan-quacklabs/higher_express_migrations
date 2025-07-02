@@ -2,15 +2,16 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZLanguage;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class ZLanguagesSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('z_languages')->insert([
+        ZLanguage::insert([
             [
                 'language_id' => 1,
                 'language' => 'English',

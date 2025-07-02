@@ -1,6 +1,7 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\ZCurrency;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,7 +14,7 @@ class ZCurrenciesSeeder extends Seeder
     {
         //
 
-        DB::table('z_currencies')->insert([
+       ZCurrency::insert([
             [
                 'currency_id'   => 1,
                 'currency_code' => 'INR',

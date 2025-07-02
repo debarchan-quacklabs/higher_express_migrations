@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZEducationMedia;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB; // Import DB facade
@@ -13,7 +14,7 @@ class ZEducationMediaSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('z_education_media')->insert([
+        ZEducationMedia::table('z_education_media')->insert([
             [
                 'medium_id' => 1,
                 'medium_name' => 'Assamese / Asomiya',

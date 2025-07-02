@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZIntegration;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -9,7 +10,7 @@ class ZIntegrationsSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('z_integrations')->insert([
+        ZIntegration::insert([
             [
                 'intg_id' => 1,
                 'intg_name' => 'Google Meet',

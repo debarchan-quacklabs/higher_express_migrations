@@ -1,6 +1,7 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\ZConfigCity;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,7 @@ class ZConfigCitySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('z_config_city')->insert([
+        ZConfigCity::insert([
             ['loc_id' => 1, 'loc_name' => 'Afghanistan', 'loc_zone_id' => null, 'parent_state_id' => 0, 'parent_country_id' => 0, 'parent_id' => 0, 'country_code' => '93', 'iso_code' => 'af', 'number_length' => '9'],
             ['loc_id' => 2, 'loc_name' => 'Albania', 'loc_zone_id' => null, 'parent_state_id' => 0, 'parent_country_id' => 0, 'parent_id' => 0, 'country_code' => '355', 'iso_code' => 'al', 'number_length' => '9'],
             ['loc_id' => 3, 'loc_name' => 'Algeria', 'loc_zone_id' => null, 'parent_state_id' => 0, 'parent_country_id' => 0, 'parent_id' => 0, 'country_code' => '213', 'iso_code' => 'dz', 'number_length' => '9'],

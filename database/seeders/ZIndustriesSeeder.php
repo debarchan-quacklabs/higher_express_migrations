@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZIndustry;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -9,7 +10,7 @@ class ZIndustriesSeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('z_industries')->insert([
+        ZIndustry::insert([
             ['industry_id' => 1, 'cloud_id' => 0, 'industry_name' => 'Oil and Gas/Energy/Power/Infrastructure', 'is_visible' => 'Yes', 'is_hidden' => 0, 'source' => 'Global'],
             ['industry_id' => 2, 'cloud_id' => 0, 'industry_name' => 'Telecom/ISP', 'is_visible' => 'Yes', 'is_hidden' => 0, 'source' => 'Global'],
             ['industry_id' => 3, 'cloud_id' => 0, 'industry_name' => 'Recruitment/Staffing', 'is_visible' => 'Yes', 'is_hidden' => 0, 'source' => 'Global'],

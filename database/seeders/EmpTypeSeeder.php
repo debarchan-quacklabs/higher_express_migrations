@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZEmpType;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB; // Import DB facade
@@ -14,7 +15,7 @@ class EmpTypeSeeder extends Seeder
     public function run(): void
     {
         // Insert data into the 'z_emp_type' table
-        DB::table('z_emp_type')->insert([
+        ZEmpType::insert([
             [
                 'emp_type_id' => 1,
                 'cloud_id' => 0,

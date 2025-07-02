@@ -1,6 +1,7 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\ZDegree;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,7 +13,7 @@ class ZDegreesSeeder extends Seeder
     public function run(): void
     {
         //
-        DB::table('z_degrees')->insert([
+        ZDegree::insert([
 
             ['degree_id' => 1, 'cloud_id' => 0, 'degree_name' => 'Bachelor of Arts (B.A)', 'degree_parent_id' => '0', 'degree_type' => 'ug', 'created_at' => '2022-04-19 19:26:00', 'updated_at' => '2022-04-19 19:26:00'],
             ['degree_id' => 2, 'cloud_id' => 0, 'degree_name' => 'Arts&Humanities', 'degree_parent_id' => '1', 'degree_type' => 'ug', 'created_at' => '2022-04-19 19:26:00', 'updated_at' => '2022-04-19 19:26:00'],

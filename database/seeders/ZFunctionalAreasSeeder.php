@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZFunctionalArea;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -16580,7 +16581,7 @@ class ZFunctionalAreasSeeder extends Seeder
         ];
 
         foreach ($data as $row) {
-            DB::table('z_functional_areas')->insert($row);
+            ZFunctionalArea::insert($row);
         }
 
     }

@@ -2,9 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZJdCategory;
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use Carbon\Carbon;
 
 class ZJdCategorySeeder extends Seeder
 {
@@ -41,7 +42,7 @@ class ZJdCategorySeeder extends Seeder
         ];
 
         foreach ($categories as $cat) {
-            DB::table('z_jd_category')->insert([
+            ZJdCategory::insert([
                 'jd_category_id' => $cat[0],
                 'jd_category_name' => $cat[1],
                 'jd_category_order' => $cat[2],
