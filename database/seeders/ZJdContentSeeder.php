@@ -20639,6 +20639,8 @@ class ZJdContentSeeder extends Seeder
                 'content_list' => 'Bachelor’s degree in Advertising, Marketing, Communication or similar field',
             ],
 
+            // 
+
                               
         ]);
         //
