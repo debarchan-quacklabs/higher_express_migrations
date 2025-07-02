@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 
+use App\Models\ZZone;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -14,7 +15,7 @@ class ZZoneSeeder extends Seeder
      */
     public function run(): void
     {
-       DB::table('z_zone')->insert([
+       ZZone::insert([
             ['zone_id' => 1, 'zone_name' => 'East'],
             ['zone_id' => 2, 'zone_name' => 'West'],
             ['zone_id' => 3, 'zone_name' => 'South'],

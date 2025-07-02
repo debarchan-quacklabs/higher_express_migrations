@@ -1,6 +1,7 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\ZConfigDepartment;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,7 @@ class ZConfigDepartmentSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('z_config_department')->insert([
+        ZConfigDepartment::insert([
 
             [
                 'dept_id'     => 1,

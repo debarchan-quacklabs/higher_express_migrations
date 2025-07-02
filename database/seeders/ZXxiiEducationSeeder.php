@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZXXiiEducation;
+use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use DB;
+
 class ZXxiiEducationSeeder extends Seeder
 {
     /**
@@ -45,7 +47,7 @@ class ZXxiiEducationSeeder extends Seeder
             ['edu_id' => 31, 'edu_name' => 'Other', 'state_name' => '', 'edu_parent_id' => '2'],
         ];
 
-        DB::table('z_x_xii_education')->insert($data);
+        ZXXiiEducation::insert($data);
     
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZTmpCity;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -9,7 +10,7 @@ class ZTmpCitySeeder extends Seeder
 {
     public function run(): void
     {
-        DB::table('z_tmp_city')->insert([
+        ZTmpCity::insert([
             ['tmp_city_id' => 1, 'tmp_name' => 'Madhubani', 'tmp_state_id' => 20, 'tmp_parent_country_id' => 1, 'tmp_country_code' => null, 'tmp_country_image' => null, 'cloud_id' => 1, 'user_id' => 1, 'status' => 'Approved', 'created_at' => now(), 'updated_at' => now()],
             ['tmp_city_id' => 2, 'tmp_name' => 'Balasore', 'tmp_state_id' => 36, 'tmp_parent_country_id' => 1, 'tmp_country_code' => null, 'tmp_country_image' => null, 'cloud_id' => 1, 'user_id' => 1, 'status' => 'Rejected', 'created_at' => now(), 'updated_at' => now()],
             ['tmp_city_id' => 3, 'tmp_name' => 'ss', 'tmp_state_id' => 33, 'tmp_parent_country_id' => 1, 'tmp_country_code' => null, 'tmp_country_image' => null, 'cloud_id' => 1, 'user_id' => 1, 'status' => 'Pending', 'created_at' => now(), 'updated_at' => now()],

@@ -1,6 +1,7 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\ZAgreementReminderSetting;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,7 @@ class ZAgreementReminderSettingsSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('z_agreement_reminder_settings')->insert([
+        ZAgreementReminderSetting::table('z_agreement_reminder_settings')->insert([
             'id'           => 1,
             'cloud_id'     => 1,
 

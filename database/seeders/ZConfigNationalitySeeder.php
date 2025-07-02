@@ -1,6 +1,7 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\ZConfigNationality;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -11,7 +12,7 @@ class ZConfigNationalitySeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('z_config_nationality')->insert([
+        ZConfigNationality::insert([
             ['nationality_id' => 1, 'num_code' => 4, 'alpha_2_code' => 'AF', 'alpha_3_code' => 'AFG', 'en_short_name' => 'Afghanistan', 'nationality' => 'Afghan'],
             ['nationality_id' => 2, 'num_code' => 248, 'alpha_2_code' => 'AX', 'alpha_3_code' => 'ALA', 'en_short_name' => 'Åland Islands', 'nationality' => 'Åland Island'],
             ['nationality_id' => 3, 'num_code' => 8, 'alpha_2_code' => 'AL', 'alpha_3_code' => 'ALB', 'en_short_name' => 'Albania', 'nationality' => 'Albanian'],

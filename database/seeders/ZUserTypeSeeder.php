@@ -2,9 +2,11 @@
 
 namespace Database\Seeders;
 
+use App\Models\ZUserType;
+use DB;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use DB;
+
 class ZUserTypeSeeder extends Seeder
 {
     /**
@@ -12,7 +14,7 @@ class ZUserTypeSeeder extends Seeder
      */
     public function run(): void
     {
-       DB::table('z_user_type')->insert([
+       ZUserType::insert([
             ['role_id' => 1, 'dept_id' => 0, 'dept_type' => 'Staffing', 'user_type' => 'Administrator'],
             ['role_id' => 2, 'dept_id' => 1, 'dept_type' => 'Staffing', 'user_type' => 'Executive - HRMS'],
             ['role_id' => 3, 'dept_id' => 1, 'dept_type' => 'Staffing', 'user_type' => 'Manager - HRMS'],
